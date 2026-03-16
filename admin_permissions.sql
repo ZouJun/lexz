@@ -11,7 +11,7 @@
  Target Server Version : 80200 (8.2.0)
  File Encoding         : 65001
 
- Date: 12/03/2026 15:03:32
+ Date: 16/03/2026 18:36:32
 */
 
 SET NAMES utf8mb4;
@@ -40,7 +40,7 @@ CREATE TABLE `admin_permissions` (
   KEY `idx_root` (`root_id`),
   KEY `idx_platform` (`belongs_platform`),
   KEY `idx_type` (`permission_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='权限表';
+) ENGINE=InnoDB AUTO_INCREMENT=169 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='权限表';
 
 -- ----------------------------
 -- Records of admin_permissions
@@ -59,7 +59,7 @@ INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permi
 INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (11, 'home_setting:function_area:add', NULL, '新增', NULL, 9, 3, 1, 2, 7, '2026-01-09 17:55:21', '2026-01-09 17:55:21');
 INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (12, 'home_setting:function_area:edit', NULL, '编辑', NULL, 9, 3, 1, 2, 8, '2026-01-09 17:55:21', '2026-01-09 17:55:21');
 INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (13, 'home_setting:function_area:delete', NULL, '删除', NULL, 9, 3, 1, 2, 9, '2026-01-09 17:55:21', '2026-01-09 17:55:21');
-INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (14, '/home-setting/content-block', NULL, '首页内容', NULL, 3, 3, 1, 1, 10, '2026-01-09 17:55:21', '2026-01-09 17:55:21');
+INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (14, '/home-setting/content-block', NULL, '课程超市', NULL, 3, 3, 1, 1, 10, '2026-01-09 17:55:21', '2026-03-16 14:03:20');
 INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (15, 'home_setting:content_block:view', NULL, '查看', NULL, 14, 3, 1, 2, 10, '2026-01-09 17:55:21', '2026-01-09 17:55:21');
 INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (16, 'home_setting:content_block:add', NULL, '新增', NULL, 14, 3, 1, 2, 11, '2026-01-09 17:55:21', '2026-01-09 17:55:21');
 INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (17, 'home_setting:content_block:delete', NULL, '删除', NULL, 14, 3, 1, 2, 12, '2026-01-09 17:55:21', '2026-01-09 17:55:21');
@@ -185,6 +185,10 @@ INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permi
 INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (162, 'system:old_user:view', NULL, '查看', NULL, 161, 78, 1, 2, 1, '2026-03-10 14:15:48', '2026-03-10 14:15:48');
 INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (163, '/pages/workbench/lesson-manage', NULL, '课时管理', NULL, 121, 121, 2, 1, 8, '2026-03-10 14:15:48', '2026-03-10 14:15:48');
 INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (164, 'workbench:lesson:view', NULL, '查看课时管理', NULL, 163, 121, 2, 2, 1, '2026-03-10 14:15:48', '2026-03-10 14:15:48');
+INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (165, '/system/show-count', NULL, '展示配置', NULL, 78, 78, 1, 1, 60, '2026-03-10 14:15:48', '2026-03-16 16:15:23');
+INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (166, 'system:show-count:view', NULL, '查看', NULL, 165, 78, 1, 2, 60, '2026-03-10 14:15:48', '2026-03-16 16:15:23');
+INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (167, 'system:show-count:edit', NULL, '编辑', NULL, 165, 78, 1, 2, 60, '2026-03-10 14:15:48', '2026-03-16 16:15:23');
+INSERT INTO `admin_permissions` (`id`, `permission_code_or_path`, `icon`, `permission_name`, `description`, `parent_id`, `root_id`, `belongs_platform`, `permission_type`, `sort_order`, `created_at`, `updated_at`) VALUES (168, 'workbench:student:edit', NULL, '编辑学员', NULL, 125, 121, 2, 2, 3, '2026-03-10 14:15:48', '2026-03-10 14:15:48');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
